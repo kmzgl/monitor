@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>前端监控</title>
+  <link rel="stylesheet" href="../public/base.css">
+</head>
+
+<body>
+  <p>控制台查看</p>
+  <div>
+    <b>调试:</b><br/>
+    1.下载 https://github.com/kmzgl/monitor<br/> 
+    2.npm install<br/> 
+    3.npm run dev<br/> 
+    <b>打包:</b><br/>
+    npm run <br/> 
+    1.npm dev build<br/> 
+    2.打包后的js文件在dist文件夹下的monitor.min.js<br/> 
+    3.将monitor.min.js在需要监控的页面引入(在页面所有jss、css静态资源之前优先引入),并根据需求调用<br/> 
+    <b>相关功能进度:</b><br/>
+    1.根据配置获取对应浏览器信息(已完成)<br/> 
+    2.根据配置获取静态资源加载错误(进行中...)<br/> 
+  </div>
+</body>
+<script>
+  new Monitor().init({
+    getDevice:{
+      switch:true,// 是否获取设备信息，为false后续配置无效
+      domain:'',// 浏览器指纹网址
+      info:['deviceType','userAgent','UUID']// 设备信息配置
+    }
+  });
+</script>
+</html>
